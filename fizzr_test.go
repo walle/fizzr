@@ -35,6 +35,18 @@ func TestFizzBuzzBazz(t *testing.T) {
 	}
 }
 
+func TestFizzBuzzBazzSpecial(t *testing.T) {
+	expected := "1\n2\nFizz\n4\nBuzz\nFizz\nBazz\n8\nFizz\nBuzz\n11\nFizz\n13\n" +
+		"Bazz\nFizzBuzz\n16\n17\nFizz\n19\nBuzz\nFizzBazz\n22\n23\nFizz\nBuzz\n" +
+		"26\nFizz\nBazz\n29\nFizzBuzz\n31\n32\nFizz\n34\nBuzzBazz\nFizz\n37\n38\n" +
+		"Fizz\nBuzz\n41\nFizzBazzThe Answer\n43\n"
+	mappings := []F{&Fizz{}, &Buzz{}, &Bazz{}, &Special{42}}
+	out := Fizzr(43, mappings)
+	if out != expected {
+		t.Errorf("Expected %s got %s", expected, out)
+	}
+}
+
 func BenchmarkFizzBuzz(b *testing.B) {
 	expected := "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n" +
 		"14\nFizzBuzz\n16\n"

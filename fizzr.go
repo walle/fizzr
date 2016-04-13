@@ -70,6 +70,19 @@ func (b *Bazz) Out(n int) string {
 	return ""
 }
 
+// Special is the special number mapping.
+type Special struct {
+	number int
+}
+
+// Out returns The Answer if the number n is the answer.
+func (s *Special) Out(n int) string {
+	if n == s.number {
+		return "The Answer"
+	}
+	return ""
+}
+
 // Fizzr runs the mappings against numbers from 1 to n and returns the generated
 // string.
 func Fizzr(n int, mappings []F) string {
