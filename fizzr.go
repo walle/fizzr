@@ -5,8 +5,8 @@ import (
 	"fmt"
 )
 
-// F is a mapping interface. Each mapping implements the Out function.
-type F interface {
+// Mapping is a mapping interface. Each mapping implements the Out function.
+type Mapping interface {
 	Out(n int) string
 }
 
@@ -80,7 +80,7 @@ func (s *Special) Out(n int) string {
 
 // Fizzr runs the mappings against numbers from 1 to n and returns the generated
 // string.
-func Fizzr(n int, mappings []F) string {
+func Fizzr(n int, mappings []Mapping) string {
 	ret := ""
 
 	for i := 1; i <= n; i++ {
