@@ -30,6 +30,10 @@ Use the `go test` tool.
 $ go test -cover
 ```
 
+```shell
+$ go test -cover -bench=. -benchmem
+```
+
 ## License
 
 The code is under the MIT license. See [LICENSE](LICENSE) for more
