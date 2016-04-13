@@ -11,8 +11,7 @@ type F interface {
 }
 
 // Even is the even number mapping.
-type Even struct {
-}
+type Even bool
 
 // Out returns Even if the number n is even.
 func (e *Even) Out(n int) string {
@@ -23,8 +22,7 @@ func (e *Even) Out(n int) string {
 }
 
 // Odd is the odd number mapping.
-type Odd struct {
-}
+type Odd bool
 
 // Out returns Odd if the number n is odd.
 func (o *Odd) Out(n int) string {
@@ -35,8 +33,7 @@ func (o *Odd) Out(n int) string {
 }
 
 // Fizz is the fizz number mapping.
-type Fizz struct {
-}
+type Fizz bool
 
 // Out returns Fizz if the number n is evenly divisible by 3.
 func (f *Fizz) Out(n int) string {
@@ -47,8 +44,7 @@ func (f *Fizz) Out(n int) string {
 }
 
 // Buzz is the buzz number mapping.
-type Buzz struct {
-}
+type Buzz bool
 
 // Out returns Buzz if the number n is evenly divisible by 5.
 func (b *Buzz) Out(n int) string {
@@ -59,8 +55,7 @@ func (b *Buzz) Out(n int) string {
 }
 
 // Bazz is the bazz number mapping.
-type Bazz struct {
-}
+type Bazz bool
 
 // Out returns Bazz if the number n is evenly divisible by 7.
 func (b *Bazz) Out(n int) string {
