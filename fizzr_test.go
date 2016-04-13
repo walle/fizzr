@@ -34,3 +34,26 @@ func TestFizzBuzzBazz(t *testing.T) {
 		t.Errorf("Expected %s got %s", expected, out)
 	}
 }
+
+func BenchmarkFizzBuzz(b *testing.B) {
+	expected := "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n" +
+		"14\nFizzBuzz\n16\n"
+	mappings := []F{&Fizz{}, &Buzz{}}
+	for i := 0; i < b.N; i++ {
+		out := Fizzr(16, mappings)
+		if out != expected {
+			b.Errorf("Expected %s got %s", expected, out)
+		}
+	}
+}
+
+func BenchmarkEvenOdd(b *testing.B) {
+	expected := "Odd\nEven\nOdd\nEven\nOdd\n"
+	mappings := []F{&Even{}, &Odd{}}
+	for i := 0; i < b.N; i++ {
+		out := Fizzr(5, mappings)
+		if out != expected {
+			b.Errorf("Expected %s got %s", expected, out)
+		}
+	}
+}
