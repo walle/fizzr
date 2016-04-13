@@ -10,6 +10,32 @@ type Mapping interface {
 	Out(n int) string
 }
 
+// ModulusMapping is a mapper that checks if a number is evenly divisible.
+type ModulusMapping struct {
+	output string
+	number int
+}
+
+// NewModulusMapping returns a ModulusMapping with the selected settings.
+func NewModulusMapping(number int, output string) *ModulusMapping {
+	return &ModulusMapping{output: output, number: number}
+}
+
+// Out returns the output if n is evenly divisible with number.
+func (m *ModulusMapping) Out(n int) string {
+	if n%m.number == 0 {
+		return m.output
+	}
+	return ""
+}
+
+// Define the common modulus mappings
+var (
+	Fizz Mapping = NewModulusMapping(3, "Fizz")
+	Buzz Mapping = NewModulusMapping(5, "Buzz")
+	Bazz Mapping = NewModulusMapping(7, "Bazz")
+)
+
 // Even is the even number mapping.
 type Even bool
 
@@ -28,39 +54,6 @@ type Odd bool
 func (o *Odd) Out(n int) string {
 	if n%2 == 1 {
 		return "Odd"
-	}
-	return ""
-}
-
-// Fizz is the fizz number mapping.
-type Fizz bool
-
-// Out returns Fizz if the number n is evenly divisible by 3.
-func (f *Fizz) Out(n int) string {
-	if n%3 == 0 {
-		return "Fizz"
-	}
-	return ""
-}
-
-// Buzz is the buzz number mapping.
-type Buzz bool
-
-// Out returns Buzz if the number n is evenly divisible by 5.
-func (b *Buzz) Out(n int) string {
-	if n%5 == 0 {
-		return "Buzz"
-	}
-	return ""
-}
-
-// Bazz is the bazz number mapping.
-type Bazz bool
-
-// Out returns Bazz if the number n is evenly divisible by 7.
-func (b *Bazz) Out(n int) string {
-	if n%7 == 0 {
-		return "Bazz"
 	}
 	return ""
 }
