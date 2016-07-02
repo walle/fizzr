@@ -2,7 +2,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/walle/fizzr.svg?style=flat)](https://codecov.io/github/walle/fizzr)
 [![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/walle/fizzr)
 [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/walle/fizzr/master/LICENSE)
-[![Go Report Card](http://goreportcard.com/badge/walle/fizzr?t=3)](http:/goreportcard.com/report/walle/fizzr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/walle/fizzr)](http:/goreportcard.com/report/walle/fizzr)
 
 # fizzr
 
